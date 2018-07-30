@@ -75,7 +75,7 @@ router.post('/books', function(req, res, next){
 //remove book from catlog
 router.delete('/books/:id', function(req, res){
     let isbnOfBookToDelete = parseInt(req.params.id);
-    log("User made request to add book with existing isbn #" + isbnOfBook);
+    log("User made request to remove book with existing isbn #" + isbnOfBookToDelete);
     booksInCatalog = booksInCatalog.filter((x) => x.isbn !== isbnOfBookToDelete);
     res.send(booksInCatalog);
 });

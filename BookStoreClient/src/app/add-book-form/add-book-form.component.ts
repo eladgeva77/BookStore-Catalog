@@ -36,10 +36,10 @@ export class AddBookFormComponent implements OnInit {
     return this.title!=="" 
         && this.genre!=="" 
         && this.description!=="" 
-        && this.isbn!==undefined
+        && this.isbn!==undefined && this.isbn!==null
         && this.author!=="" 
         && this.date!=="" 
-        && this.price!==undefined;
+        && this.price!==undefined && this.price!==null;
   }
 
   addNewBook()
