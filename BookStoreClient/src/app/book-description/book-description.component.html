@@ -1,0 +1,14 @@
+<ng-container *ngIf="book!==undefined">
+    <h1>{{book.title}}</h1>
+    <div><strong>Author:</strong>  {{book.author}}</div>
+    <div><strong>ISBN:</strong> {{book.isbn}}</div>
+    <div><strong>Description:</strong> {{book.description}}</div>
+    <div><strong>Publication Date:</strong> {{book.date}}</div>
+    <div><strong>Genre:</strong>  {{book.genre}}</div>
+    <div><strong>Price:</strong> {{book.price | currency}}</div>
+</ng-container>
+<div *ngIf="book==undefined">
+    <h2>Error:</h2>
+    <h3>The book with the given ISBN number doesn't exist</h3>
+</div>
+

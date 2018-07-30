@@ -1,0 +1,36 @@
+<form>
+  <div class="form-group">
+    <label for="titleInput">Title</label>
+    <input type="text" [(ngModel)]="title" name="title" required class="form-control" id="titleInput" placeholder="book title">
+  </div>
+  <div class="form-group">
+    <label for="genreInput">Genre</label>
+    <select [(ngModel)]="genre" name="genre" class="form-control" id="genreInput">
+      <option *ngFor='let genre of genreTypes'>{{genre}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="descriptionInput">Description</label>
+    <textarea [(ngModel)]="description" name="description" class="form-control" id="descriptionInput" rows="3" placeholder="A short description of the book"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="isbnNum">ISBN #</label>
+    <input type="number" [(ngModel)]="isbn" name="isbn" for="isbnNum" required class="form-control" id="isbn" placeholder="nubmers only">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Author</label>
+    <input type="text" [(ngModel)]="author" name="author" required class="form-control" id="author" placeholder="The Authors name">
+  </div>
+
+  <div class="form-group">
+      <label for="date">Publication Date</label>
+      <input type="text" [(ngModel)]="date" name="date" required pattern="(0[1-9]|1[0-9]|2[0-9]|3[01]).(0[1-9]|1[012]).[0-9]{4}" class="form-control" id="date" placeholder="DD/MM/YYYY">
+    </div>
+
+    <div class="form-group">
+        <label for="priceInput">Price</label>
+        <input type="number" [(ngModel)]="price" name="price" required class="form-control" id="priceInput" placeholder="">
+      </div>
+
+  <button class="btn btn-primary" type="submit" (click)="addNewBook()">Add Book To Catalog</button>
+</form>

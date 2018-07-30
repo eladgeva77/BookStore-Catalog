@@ -1,0 +1,26 @@
+<table class="table table-striped" *ngIf="CatalogContainsAtleastOneBook()">
+    <thead>
+      <tr>
+        <th scope="col">Book Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Price in USD$</th>
+        <th scope="col">Click For More Details</th>
+        <th scope="col">Remove From Catalog</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let book of books'>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.isbn}}</td>
+        <td>{{book.price | currency}}</td>
+        <td><button (click)="detailsBtnClick(book)" >Details</button></td>
+        <td><button (click)='removeFromCatalog(book.isbn)'>Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="!CatalogContainsAtleastOneBook()">
+    <h1>Your catalog is empty</h1>
+    <h3>You can navigate to the 'Add' page to populate your catalog</h3>
+  </div>
